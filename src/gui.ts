@@ -198,7 +198,7 @@ export function downloadPalettePng() {
 
 export function downloadPNG() {
     if ($("#svgContainer svg").length > 0) {
-        saveSvgAsPng($("#svgContainer svg").get(0), "paintbynumbers.png");
+        saveSvgAsPng($("#svgContainer svg").get(0), "paintman.png");
     }
 }
 
@@ -213,7 +213,7 @@ export function downloadSVG() {
         const svgUrl = URL.createObjectURL(svgBlob);
         const downloadLink = document.createElement("a");
         downloadLink.href = svgUrl;
-        downloadLink.download = "paintbynumbers.svg";
+        downloadLink.download = "paintman.svg";
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
@@ -224,7 +224,7 @@ export function downloadSVG() {
         var dl = document.createElement("a");
         document.body.appendChild(dl);
         dl.setAttribute("href", dataURL);
-        dl.setAttribute("download", "paintbynumbers.svg");
+        dl.setAttribute("download", "paintman.svg");
         dl.click();
         */
     }
