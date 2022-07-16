@@ -1,4 +1,6 @@
 echo "building..."
-mkdir dist
-cp -r public/* dist/
+mkdir dist || true
+# cp -r public/* dist/
+cp index.html dist/ 
+cp -r styles dist/
 cp -r scripts dist/

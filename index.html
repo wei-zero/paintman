@@ -13,24 +13,26 @@
     <div class="container">
         <div class="row">
             <h2> Paintman </h2>
-            <span>Paste from clipboard (ctrl+v) to change the image (or browse for a file <input id="file" type="file"
-                    accept="image/x-png,image/gif,image/jpeg"></input>). Large images are very slow to process
-                though.</span>
+            <span>从粘贴板粘贴图片 (ctrl+v) 
+                或点击浏览图片 <input id="file" type="file" accept="image/x-png,image/gif,image/jpeg"></input> 
+                </span>
             <br />
-            <span>Example images:
-                <a id="lnkTrivial" href="#">trivial</a> -
-                <a id="lnkSmall" href="#">small</a> -
-                <a id="lnkMedium" href="#">medium</a>
-            </span>
+            <span>大图片处理会比较慢</span>
+            <br />
+            <span>示例图片:
+                <a id="lnkTrivial" href="#">简单</a> -
+                <a id="lnkSmall" href="#">小图片</a> -
+                <a id="lnkMedium" href="#">中等图片</a>
+            </span> 
         </div>
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s2">
-                        <a href="#input-pane">Input</a>
+                        <a href="#input-pane">输入图片</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#options-pane">Options</a>
+                        <a href="#options-pane">选项</a>
                     </li>
                 </ul>
             </div>
@@ -51,18 +53,18 @@
                             <div class="col s3" style="margin-top: 34px;">
                                 <label>
                                     <input id="chkResizeImage" type="checkbox" checked="checked" />
-                                    <span>Resize image larger than
+                                    <span>大于该设定尺寸将压缩图片
                                         <i class="material-icons tooltipped"
                                             data-tooltip="If checked and the input image is larger than the given dimensions then it will be resized to fit but will maintain its ratio.">info</i>
                                     </span>
                                 </label>
                             </div>
                             <div class="col s2">
-                                <label for="txtResizeWidth">width</label>
+                                <label for="txtResizeWidth">宽</label>
                                 <input id="txtResizeWidth" type="number" value="1024" min="1" class="validate">
                             </div>
                             <div class="col s2">
-                                <label for="txtResizeHeight">height</label>
+                                <label for="txtResizeHeight">高</label>
                                 <input id="txtResizeHeight" type="number" value="1024" min="1" class="validate">
                             </div>
                         </div>
@@ -71,7 +73,7 @@
                         <div class="row">
                             <div class="input-field col s2">
                                 <input id="txtNrOfClusters" type="number" value="16" min="1" class="validate">
-                                <label for="txtNrOfClusters">Number of colors
+                                <label for="txtNrOfClusters">颜色数
                                     <i class="material-icons tooltipped"
                                         data-tooltip="The number of colors to quantize the image to">info</i>
                                 </label>
@@ -80,7 +82,7 @@
                             <div class="input-field col s2">
                                 <input id="txtClusterPrecision" type="number" value="1" min="1" step="0.05"
                                     class="validate">
-                                <label for="txtClusterPrecision">Cluster precision
+                                <label for="txtClusterPrecision">聚族精度
                                     <i class="material-icons tooltipped"
                                         data-tooltip="The threshold delta distance of the k-means clustering to reach before stopping. Having a bigger value will speed up the clustering but may yield suboptimal clusters.">info</i>
                                 </label>
@@ -89,7 +91,7 @@
                             <div class="input-field col s2">
                                 <input id="txtRandomSeed" type="number" value="0" min="0" step="1"
                                     class="validate">
-                                <label for="txtRandomSeed">Random seed
+                                <label for="txtRandomSeed">随机种子
                                     <i class="material-icons tooltipped"
                                         data-tooltip="The seed to use for the random number generator to choose the initial centroids for k-means clusering. Using the same seed ensures you will get the same result every time.">info</i>
                                 </label>
@@ -100,7 +102,7 @@
                         <div class="row">
 
                             <div class="col s3">
-                                <label>Clustering color space
+                                <label>聚族颜色空间
                                     <i class="material-icons tooltipped"
                                         data-tooltip="The color space to apply clustering in">info</i>
                                 </label>
@@ -125,7 +127,7 @@
                             </div>
 
                             <div class="col s12">
-                                <label for="txtKMeansColorRestrictions">Restrict clustering colors
+                                <label for="txtKMeansColorRestrictions">约束聚族颜色
                                     <i class="material-icons tooltipped"
                                         data-tooltip="Specify which colors should be used, one per line in 'r,g,b' format. Use // as comment. If no colors are specified no restrictions are applied. Useful if you only have a few colors of paint on hand.">info</i>
                                 </label>
@@ -141,7 +143,7 @@
                             <div class="input-field col s4">
                                 <input id="txtNarrowPixelStripCleanupRuns" type="number" value="3" min="0"
                                     class="validate">
-                                <label for="txtNarrowPixelStripCleanupRuns">Number of runs for narrow pixel cleanup
+                                <label for="txtNarrowPixelStripCleanupRuns">收缩像素清理运行次数
                                     <i class="material-icons tooltipped"
                                         data-tooltip="Narrow pixel cleanup removes strips of single pixel rows, which would make some facets have some borders segments that are way too narrow to be useful. The small facet removal can introduce new narrow pixel strips, so this is repeated in a few iterative runs.">info</i>
                                 </label>
@@ -149,7 +151,7 @@
                             <div class="input-field col s4">
                                 <input id="txtRemoveFacetsSmallerThan" type="number" value="20" min="1"
                                     class="validate">
-                                <label for="txtRemoveFacetsSmallerThan">Remove small facets smaller than (pixels)
+                                <label for="txtRemoveFacetsSmallerThan">移除尺寸过小的面 (像素)
                                     <i class="material-icons tooltipped"
                                         data-tooltip="Removes any facets that are smaller than the given amount of pixels. Lowering the value will create more detailed results but might be much harder to actually paint due to their size.">info</i>
                                 </label>
@@ -157,7 +159,7 @@
                             <div class="input-field col s4">
                                 <input id="txtMaximumNumberOfFacets" type="number" value="100000" min="1"
                                     class="validate">
-                                <label for="txtMaximumNumberOfFacets">Maximum number of facets
+                                <label for="txtMaximumNumberOfFacets">最大面数
                                     <i class="material-icons tooltipped"
                                         data-tooltip="If there are more facets than the given maximum number, keep removing the smallest facets until the limit is reached">info</i>
                                 </label>
@@ -167,7 +169,7 @@
                             <div class="input-field col s6">
                                 <div class="row">
                                     <div class="col s4">
-                                        <label>Small facet removal order
+                                        <label>小面移除顺序
                                             <i class="material-icons tooltipped"
                                                 data-tooltip="Largest to smallest will prevent boundaries from warping the shapes because the smaller facets act as border anchorpoints but can be considerably slower">info</i>
                                         </label>
@@ -176,14 +178,14 @@
                                         <label>
                                             <input id="optFacetRemovalLargestToSmallest" name="smallfacetremovalorder"
                                                 type="radio" checked />
-                                            <span>Largest to smallest</span>
+                                            <span>从大到小</span>
                                         </label>
                                     </div>
                                     <div class="col s4">
                                         <label>
                                             <input id="optFacetRemovalSmallestToLargest" name="smallfacetremovalorder"
                                                 type="radio" />
-                                            <span>Smallest to largest</span>
+                                            <span>从小到大</span>
                                         </label>
                                     </div>
                                 </div>
@@ -196,8 +198,7 @@
                             <div class="input-field col s5">
                                 <input id="txtNrOfTimesToHalveBorderSegments" type="number" value="2" min="0"
                                     class="validate">
-                                <label for="txtNrOfTimesToHalveBorderSegments">Amount of times to halve border segment
-                                    complexity)
+                                <label for="txtNrOfTimesToHalveBorderSegments">收缩边界段次数
                                     <i class="material-icons tooltipped"
                                         data-tooltip="Reducing the amount of points in a border segment (using haar wavelet reduction) will smooth out the quadratic curve more but at a loss of detail. <br/>A segment (shared border with a facet) will always retain its start and end point.">info</i>
                                 </label>
@@ -209,7 +210,7 @@
             </div>
 
             <div class="col s12">
-                <a class="waves-effect waves-light btn" id="btnProcess">Process image</a>
+                <a class="waves-effect waves-light btn" id="btnProcess">生成油画</a>
             </div>
         </div>
 
@@ -217,7 +218,7 @@
 
             <div class="col s2">
                 <div class="status kMeans">
-                    K-means clustering
+                    聚族分类
                     <div class="progress">
                         <div id="statusKMeans" class="determinate" style="width: 0%"></div>
                     </div>
@@ -225,7 +226,7 @@
             </div>
             <div class="col s2">
                 <div class="status facetBuilding">
-                    Facet building
+                    构建面
                     <div class="progress">
                         <div id="statusFacetBuilding" class="determinate" style="width: 0%"></div>
                     </div>
@@ -233,7 +234,7 @@
             </div>
             <div class="col s2">
                 <div class="status facetReduction">
-                    Small facet pruning
+                    小面去除
                     <div class="progress">
                         <div id="statusFacetReduction" class="determinate" style="width: 0%"></div>
                     </div>
@@ -241,7 +242,7 @@
             </div>
             <div class="col s2">
                 <div class="status facetBorderPath">
-                    Border detection
+                    边缘检测
                     <div class="progress">
                         <div id="statusFacetBorderPath" class="determinate" style="width: 0%"></div>
                     </div>
@@ -249,7 +250,7 @@
             </div>
             <div class="col s2">
                 <div class="status facetBorderSegmentation">
-                    Border segmentation
+                    边缘分段
                     <div class="progress">
                         <div id="statusFacetBorderSegmentation" class="determinate" style="width: 0%"></div>
                     </div>
@@ -257,7 +258,7 @@
             </div>
             <div class="col s2">
                 <div class="status facetLabelPlacement">
-                    Label placement
+                    标签放置
                     <div class="progress">
                         <div id="statusFacetLabelPlacement" class="determinate" style="width: 0%"></div>
                     </div>
@@ -267,7 +268,7 @@
         <div class="row">
             <div class="col s2">
                 <div class="status SVGGenerate">
-                    SVG generation
+                    SVG 生成
                     <div class="progress">
                         <div id="statusSVGGenerate" class="determinate" style="width: 0%"></div>
                     </div>
@@ -279,25 +280,25 @@
             <div class="col s12">
                 <ul id="tabsOutput" class="tabs">
                     <li class="tab col s2">
-                        <a href="#kmeans-pane">Quantized image</a>
+                        <a href="#kmeans-pane">量化图</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#reduction-pane">Facet reduction</a>
+                        <a href="#reduction-pane">面剔除</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#borderpath-pane">Border tracing</a>
+                        <a href="#borderpath-pane">边缘跟踪</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#bordersegmentation-pane">Border segmentation</a>
+                        <a href="#bordersegmentation-pane">边缘分段</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#labelplacement-pane">Label placement</a>
+                        <a href="#labelplacement-pane">标签放置</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#output-pane">Output</a>
+                        <a href="#output-pane">输出</a>
                     </li>
                     <li class="tab col s2">
-                        <a href="#log-pane">Log</a>
+                        <a href="#log-pane">日志</a>
                     </li>
                 </ul>
             </div>
@@ -408,6 +409,9 @@
             </div>
         </div>
     </div>
+    <div style="position:absolute;top:3px;right:3px;font-size:0.7em">
+    </div>
+
 
     <script src="scripts/lib/saveSvgAsPng.js"></script>
     <script src="scripts/lib/require.js"></script>
